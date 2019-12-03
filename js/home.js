@@ -6,6 +6,7 @@ $(function () {
 		// setItemMenu(auth);
 	}
 })
+//左边菜单栏移动上去
 $("#nav").on('mouseenter', ".item", function () {
 	var h = - (($(this).children('.sub-nav-wrap').children('.sub-nav').children('.sub-navList').length * 25 / 2) - 20.5)
 	$(this).children('.sub-nav-wrap').css({
@@ -18,9 +19,16 @@ $("#nav").on('mouseleave', ".item", function () {
 		'display': 'none'
 	})
 });
+$("#nav").on('click', ".item", function () {
+	if($(this).children().length == 0){
+		$(this).addClass("bg-blue").siblings().removeClass("bg-blue");
+	}
+});
+$("#nav").on("click",".sub-navList",function(){
+	$(this).parents(".item").addClass('bg-blue').siblings().removeClass("bg-blue")
+})
 //循环渲染左边菜单栏
 function setItemMenu(auth) {
-	console.log(auth);
 	var li = "";
 	for(var i = 0; i < auth.length; i++){
 		if(auth[i].children.length == 0){
@@ -38,7 +46,9 @@ function setItemMenu(auth) {
 			li += "</li>";
 		}
 	}
+	$('#nav').html("");
 	$('#nav').append(li);
+	$("#contentRightMenu").html("");
 	createTitle("./homeWork.html","工作台"); //创建一个标签按钮
 }
 var createIframs = ["./homeWork.html"], //储存是否已经存在此iframe
@@ -91,10 +101,14 @@ $('#contentRightMenu').on('click','.closeThis',function(event){
 	for(var i in createTitles){
 		if(createTitles[i].url == thisSrc && createTitles[i].text == $(this).prev()[0].innerText){
 			if(i>0){//工作台标签不允许移除
+				if(i == createTitles.length -1 ){//如果是关闭最后一个，则前面一个打开
+					$('.menulist-box').eq(i-1).children('.yuan').addClass('on');//前面一个打开
+					$("#contentRightMenuContent .iframeBox").eq(i-1).addClass("block").siblings().removeClass("block")
+				}else{
+
+				}
 				createTitles.splice(i,1); //移除关闭的路由
 				$('.menulist-box').eq(i).remove();
-				$('.menulist-box').eq(i-1).children('.yuan').addClass('on');//前面一个打开
-				$("#contentRightMenuContent .iframeBox").eq(i-1).addClass("block").siblings().removeClass("block")
 			}
 		}
 	}

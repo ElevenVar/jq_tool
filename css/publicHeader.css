@@ -1,0 +1,14 @@
+.flex {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+}
+.zh-select {
+  position: relative;
+}
+.public-header {
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}

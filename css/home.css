@@ -12,6 +12,9 @@ li {
 .block {
   display: block !important;
 }
+.bg-blue {
+  background-color: #0079a7 !important;
+}
 .content {
   height: 100%;
   overflow: hidden;
