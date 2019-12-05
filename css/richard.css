@@ -36,6 +36,11 @@
   height: 20px;
 }
 .richardPaper .richard-content .richard-content-content {
-  height: 95%;
+  height: 92%;
   overflow: auto;
+  padding: 10px;
+}
+.richardPaper .richard-content .richard-content-content .zh-img-list {
+  height: 5000px;
+  border: 1px solid red;
 }
