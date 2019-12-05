@@ -1,0 +1,41 @@
+.richardPaper {
+  height: 100%;
+}
+.richardPaper .richard-content {
+  font-size: 12px;
+  height: calc(100% - 31px);
+  padding: 15px;
+}
+.richardPaper .richard-content .richard-content-header {
+  height: 32px;
+  align-items: center;
+}
+.richardPaper .richard-content .richard-content-header .zh-button-box {
+  float: left;
+  margin-right: 10px;
+}
+.richardPaper .richard-content .richard-content-header .rch-right {
+  float: right;
+  display: flex;
+  border: 1px solid #409EFF;
+  align-items: center;
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.richardPaper .richard-content .richard-content-header .rch-right div {
+  width: 60px;
+  text-align: center;
+  padding: 5px 15px;
+}
+.richardPaper .richard-content .richard-content-header .rch-right .on {
+  background-color: #409EFF;
+  color: #fff;
+}
+.richardPaper .richard-content .check-all-box {
+  height: 20px;
+}
+.richardPaper .richard-content .richard-content-content {
+  height: 95%;
+  overflow: auto;
+}
