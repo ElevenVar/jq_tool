@@ -53,8 +53,8 @@ ul .selected-this {
 }
 .zh-checkbox[type=checkbox]:after {
   position: absolute;
-  width: 9px;
-  height: 14px;
+  width: 8px;
+  height: 13px;
   content: " ";
   background-color: #fff;
   color: #fff;
@@ -63,7 +63,7 @@ ul .selected-this {
   padding: 0px 3px;
   border-radius: 3px;
   border: 1px solid #dcdcdc;
-  line-height: 14px;
+  line-height: 12px;
 }
 .zh-checkbox[type=checkbox]:checked:after {
   content: "✓";

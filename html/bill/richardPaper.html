@@ -103,10 +103,83 @@
 						<input class='zh-checkbox' type="checkbox">全选
 					</div>
 					<div class="richard-content-content">
-						<div class='zh-img-list'></div>
+						<div class='zh-picContainer'>
+							<div class="zh-picItem">
+								<div class="zh-picCheck">
+									<input class='zh-checkbox' type="checkbox">
+									<span>增值税专用发票(收入)</span>
+								</div>
+								<div class="zh-pic">
+									<img src="../../img/1.jpg" alt="">
+								</div>
+								<div class="zh-picNo">StringTheory_01</div>
+							</div>
+							<div class="zh-picItem">
+								<div class="zh-picCheck">
+									<input class='zh-checkbox' type="checkbox">
+									<span>增值税专用发票(收入)</span>
+								</div>
+								<div class="zh-pic">
+									<img src="../../img/1.jpg" alt="">
+								</div>
+								<div class="zh-picNo">StringTheory_02</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function(){
+			// creatDiv();
+		})
+		function creatDiv(){
+			var div='';
+			for(var i= 0;i<30;i++){
+				div +="<div class='zh-picItem'>"+
+								"<div class='zh-picCheck'>"+
+									"<input class='zh-checkbox' type='checkbox'>"+
+									"<span>增值税专用发票(收入)</span>"+
+								"</div>"+
+								"<div class='zh-pic'>"+
+									"<img src='../../img/1.jpg' alt=''>"+
+								"</div>"+
+								"<div class='zh-picNo'>StringTheory_"+i+"</div>"+
+							"</div>";
+			};
+			$(".zh-picContainer").append(div);
+		};
+		$('.zh-picItem').mousedown(function(e){
+			var that = this;
+			var positionDiv = $(this).offset();
+			var distenceX = e.pageX - positionDiv.left;
+			var distenceY = e.pageY - positionDiv.top;
+			$(document).mousemove(function(e) {
+				var x = e.pageX - distenceX;
+				var y = e.pageY - distenceY;
+				if (x < 0) {
+					x = 0;
+				} else if (x > $(document).width() - $(that).outerWidth(true)) {
+					x = $(document).width() - $(that).outerWidth(true);
+					debugger
+				}
+
+				if (y < 0) {
+						y = 0;
+				} else if (y > $(document).height() - $(that).outerHeight(true)) {
+						y = $(document).height() + $(that).outerHeight(true);
+						debugger
+				}
+				$(that).css({
+						'left': x + 'px',
+						'top': y + 'px',
+						'position':'relative'
+				});
+			});
+			$(document).mouseup(function() {
+					$(document).off('mousemove');
+			});
+		});
+	</script>
 </html>
