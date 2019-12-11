@@ -1,0 +1,93 @@
+@primary-color:#409EFF; //主要颜色
+@success-color:#07c160; //成功颜色
+@info-color:#909399; //信息按钮
+@warning-color:#ff976a; //警告按钮
+@danger-color:#ee0a24; //危险按钮
+/*常用按钮部分     开始*/
+/* <div class='zh-button' type='info' size='small' plain>保存</div>*/
+.zh-button{
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #FFF;
+  border: 1px solid #DCDFE6;
+  color: #606266;
+  font-size: 14px;
+  padding:12px 20px;
+  border-radius:4px;
+  margin-right:10px;
+}
+/**主要按钮*/
+.zh-button[type=primary]{
+  color:#fff;
+  background-color:@primary-color;
+  border-color:@primary-color;
+}
+.zh-button[type=primary][plain]{
+  color:@primary-color;
+  background-color:#fff;
+  border-color:@primary-color;
+}
+/*成功按钮*/
+.zh-button[type=success]{
+  color:#fff;
+  background-color:@success-color;
+  border-color:@success-color;
+}
+.zh-button[type=success][plain]{
+  color:@success-color;
+  background-color:#fff;
+  border-color:@success-color;
+}
+/*信息按钮*/
+.zh-button[type=info]{
+  color:#fff;
+  background-color:@info-color;
+  border-color:@info-color;
+}
+.zh-button[type=info][plain]{
+  color:@info-color;
+  background-color:#fff;
+  border-color:@info-color;
+}
+/*警告按钮*/
+.zh-button[type=warning]{
+  color:#fff;
+  background-color:@warning-color;
+  border-color:@warning-color;
+}
+.zh-button[type=warning][plain]{
+  color:@warning-color;
+  background-color:#fff;
+  border-color:@warning-color;
+}
+/*危险按钮*/
+.zh-button[type=danger]{
+  color:#fff;
+  background-color:@danger-color;
+  border-color:@danger-color;
+}
+.zh-button[type=danger][plain]{
+  color:@danger-color;
+  background-color:#fff;
+  border-color:@danger-color;
+}
+/*小按钮*/
+.zh-button[size=small]{
+  font-size:12px;
+  padding:9px 15px;
+  border-radius:3px;
+}
+/*最小按钮*/
+.zh-button[size=mini]{
+  font-size:12px;
+  padding:0 12px;
+  height:28px;
+  line-height:28px;
+}
+/*圆角按钮*/
+.zh-button[around]{
+  border-radius:20px;
+}
+/*常用按钮部分     结束*/
