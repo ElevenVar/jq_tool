@@ -7,15 +7,72 @@
   background: #fff;
   padding: 8px 15px;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -webkit-box-lines: multiple;
-  -moz-flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+.voucher .voucher-container {
+  background-color: #fff;
+  padding: 8px 15px;
+  width: 1110px;
+}
+.voucher .voucher-container .voucher-tablebox {
+  color: #303133;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table thead th {
+  border-top-width: 2px;
+  height: 48px;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table tbody .current td {
+  background-color: #f8f8f8;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table tbody td,
+.voucher .voucher-container .voucher-tablebox .voucher-table tfoot td {
+  height: 58px;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table tfoot td {
+  border-bottom-width: 2px;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table td,
+.voucher .voucher-container .voucher-tablebox .voucher-table th {
+  border: 1px solid #666;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table .col_operate {
+  text-align: center;
+  width: 26px;
+  border: 1px solid #FFF;
+  border-right: 1px solid #ccc;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table .col_operate .operate {
+  visibility: hidden;
+  width: 26px;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table .col_operate .operate a {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../img/page_spr_icons.png") no-repeat -112px -96px;
+  cursor: pointer;
+  color: red;
+  border: 1px solid red;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table .col_summary {
+  border-left-width: 2px;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table .col_money {
+  width: 218px;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table .col_credit {
+  border-right-width: 2px;
+}
+.voucher .voucher-container .voucher-tablebox .voucher-table td.col_credit,
+.voucher .voucher-container .voucher-tablebox .voucher-table td.col_debite {
+  background-image: url("../img/money_rp.png");
+  background-repeat: repeat-y;
 }
