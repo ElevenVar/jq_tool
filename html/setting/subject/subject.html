@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../../css/public.css">
+  <script src='../../../node_modules/_jquery@3.4.1@jquery/dist/jquery.min.js'></script>
+  <script src='../../../js/ajax.js'></script>
+		<script src='../../../js/api.js'></script>
+  <title>科目</title>
+</head>
+<body>
+  <div class='zh-modal-background dn'></div>
+  <div class='zh-loading'></div>
+  <div class='zh-modal-box dn'>弹窗蒙城</div>
+  <div class='zh-card-box'>
+    <div class='zh-card'>
+      <div class='zh-card-header pr'>
+        <ul class='zh-menubar flex' id='subjectMenu'>
+          <li><div sType='ASSETS'>资产</div></li>
+          <li class='zh-active'><div sType='LIABILITY'>负债</div></li>
+          <li><div sType='RIGHTS_AND_INTERESTS'>权益</div></li>
+          <li><div sType='COST'>成本</div></li>
+          <li><div sType='PROFIT_AND_LOSS'>损益</div></li>
+        </ul>
+      </div>
+      <div class='zh-table-box'>
+        <table class='zh-table' algin='center'>
+          <thead>
+            <tr>
+              <th checkbox><div class='checkbox checked'>✔</div></th>
+              <th>编码</th>
+              <th>名称</th>
+              <th>类别</th>
+              <th>余额方向</th>
+              <th>辅助核算</th>
+              <th>外币</th>
+              <th>单位</th>
+              <th>状态</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td checkbox><div class='checkbox checked'>✔</div></td>
+              <td>1001</td>
+              <td><p>库存现金</p></td>
+              <td>流动资产</td>
+              <td>借</td>
+              <td>客户</td>
+              <td>AAA</td>
+              <td>kg</td>
+              <td><div class='zh-switch'></div> </td>
+              <td style='width:235px;'>
+                <div class="zh-button" size="small" type="primary">增加下级</div>
+                <div class="zh-button" size="small">修改</div>
+                <div class="zh-button" size="small">删除</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+<script src='../../../js/subject/subject.js'></script>
+</html>

@@ -141,7 +141,7 @@
 					if(res.code == 0){
 						sessionStorage.setItem('setToken',res.data.token) //token储存
 						sessionStorage.setItem('company',JSON.stringify(res.data.company)); //储存公司信息
-						window.location.href = "../home/home.html";
+						location.href = "../home/home.html";
 					}
 				},
 				error:function(res){

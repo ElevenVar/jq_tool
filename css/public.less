@@ -3,6 +3,52 @@
 @info-color:#909399; //信息按钮
 @warning-color:#ff976a; //警告按钮
 @danger-color:#ee0a24; //危险按钮
+//设置body,html,
+*{
+  margin:0;
+  padding:0;
+}
+li{
+  list-style:none;
+}
+html,body{
+  width:100%;
+  height:100%;
+  overflow: hidden;
+  background-color:#f2f2f2;
+}
+/*常用的定位*/
+.pr{
+  position: relative;
+}
+.pa{
+  position: absolute;
+}
+.pf{
+  position: fixed;
+}
+/*常用的浮动*/
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+/*felx 布局声明*/
+.flex{
+  display: flex;
+  flex-direction:row;
+}
+/*元素类型改变*/
+.db{
+  display: block;
+}
+.dn{
+  display: none;
+}
+.dib{
+  display: inline-block;
+}
 /*常用按钮部分     开始*/
 /* <div class='zh-button' type='info' size='small' plain>保存</div>
     type:定义不同颜色的按钮
@@ -20,77 +66,215 @@
   padding:12px 20px;
   border-radius:4px;
   margin-right:10px;
+  &[type="primary"]{
+    color:#fff;
+    background-color:@primary-color;
+    border-color:@primary-color;
+  }
+  &[type='primary'][plain]{
+    color:@primary-color;
+    background-color:#fff;
+    border-color:@primary-color;
+  }
+  /*成功按钮*/
+  &[type='success']{
+    color:#fff;
+    background-color:@success-color;
+    border-color:@success-color;
+  }
+  &[type='success'][plain]{
+    color:@success-color;
+    background-color:#fff;
+    border-color:@success-color;
+  }
+  /*信息按钮*/
+  &[type='info']{
+    color:#fff;
+    background-color:@info-color;
+    border-color:@info-color;
+  }
+  &[type='info'][plain]{
+    color:@info-color;
+    background-color:#fff;
+    border-color:@info-color;
+  }
+  /*警告按钮*/
+  &[type='warning']{
+    color:#fff;
+    background-color:@warning-color;
+    border-color:@warning-color;
+  }
+  &[type='warning'][plain]{
+    color:@warning-color;
+    background-color:#fff;
+    border-color:@warning-color;
+  }
+  /*危险按钮*/
+  &[type=danger]{
+    color:#fff;
+    background-color:@danger-color;
+    border-color:@danger-color;
+  }
+  &[type=danger][plain]{
+    color:@danger-color;
+    background-color:#fff;
+    border-color:@danger-color;
+  }
+  /*小按钮*/
+  &[size=small]{
+    font-size:12px;
+    padding:9px 15px;
+    border-radius:3px;
+  }
+  /*最小按钮*/
+  &[size=mini]{
+    font-size:12px;
+    padding:0 12px;
+    height:28px;
+    line-height:28px;
+  }
+  /*圆角按钮*/
+  &[around]{
+    border-radius:20px;
+  }
 }
-/**主要按钮*/
-.zh-button[type=primary]{
-  color:#fff;
-  background-color:@primary-color;
-  border-color:@primary-color;
+/*开关样式*/
+.zh-switch{
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+  line-height: 20px;
+  border-radius: 22px;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  &::before{
+    content:"";
+    display: inline-block;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    z-index: 1;
+    background-color:#fff;
+    border:1px solid #fff;
+  }
 }
-.zh-button[type=primary][plain]{
-  color:@primary-color;
-  background-color:#fff;
-  border-color:@primary-color;
+/*弹窗背景蒙层*/
+.zh-modal-background{
+  border:1px solid red;
+  position:fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  background-color:#dcdcdc;
+  z-index:1000;
 }
-/*成功按钮*/
-.zh-button[type=success]{
-  color:#fff;
-  background-color:@success-color;
-  border-color:@success-color;
+/*转圈样式*/
+.zh-loading{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width:100px;
+  height:100px;
+  padding: 6px 20px 6px 30px;
+  background: url('../img/homeImg/bigloading.gif') no-repeat center;
+  z-index:1000;
 }
-.zh-button[type=success][plain]{
-  color:@success-color;
-  background-color:#fff;
-  border-color:@success-color;
+/*弹窗内容*/
+.zh-modal-box{
+  position: absolute;
+  top:132px;
+  left:50%;
+  margin-left:-226px;
+  width:452px;
+  z-index:1001;
 }
-/*信息按钮*/
-.zh-button[type=info]{
-  color:#fff;
-  background-color:@info-color;
-  border-color:@info-color;
+/*高度自适应*/
+.zh-card-box{
+  width:100%;
+  height:100%;
+  padding:15px;
+  .zh-card{
+    background-color:#fff;
+    height:calc(100% - 30px);
+    width:calc(100% - 30px);
+    z-index:2;
+    .zh-card-header{
+      padding:12px 15px;
+    }
+  }
 }
-.zh-button[type=info][plain]{
-  color:@info-color;
-  background-color:#fff;
-  border-color:@info-color;
-}
-/*警告按钮*/
-.zh-button[type=warning]{
-  color:#fff;
-  background-color:@warning-color;
-  border-color:@warning-color;
-}
-.zh-button[type=warning][plain]{
-  color:@warning-color;
-  background-color:#fff;
-  border-color:@warning-color;
-}
-/*危险按钮*/
-.zh-button[type=danger]{
-  color:#fff;
-  background-color:@danger-color;
-  border-color:@danger-color;
-}
-.zh-button[type=danger][plain]{
-  color:@danger-color;
-  background-color:#fff;
-  border-color:@danger-color;
-}
-/*小按钮*/
-.zh-button[size=small]{
+/*导航栏菜单*/
+.zh-menubar{
   font-size:12px;
-  padding:9px 15px;
-  border-radius:3px;
+  border-bottom:1px solid #f2f2f2;
+  li{
+    padding:10px 20px;
+    cursor:pointer;
+    color:#909399;
+  }
+  .zh-active{
+    border-bottom:2px solid #409EFF;
+  }
 }
-/*最小按钮*/
-.zh-button[size=mini]{
-  font-size:12px;
-  padding:0 12px;
-  height:28px;
-  line-height:28px;
+/*表格数据渲染*/
+.zh-table-box{
+  padding:0 15px 15px;
+  .zh-table{
+    width:100%;
+    font-size:12px;
+    position: relative;
+    border:1px solid #f2f2f2;
+    border-collapse:collapse;
+    th,td{
+      height:28px;
+      line-height:28px;
+      padding:5px 10px;
+      border:1px solid #ebeef5;
+      &[checkbox]{
+        width:40px;
+        text-align: center;
+        position: relative;
+      }
+    }
+    thead th{
+      font-weight:500;
+      background-color:#f8f8f9;
+    }
+    &[algin='center']{
+      td,th{
+        text-align: center;
+      }
+    }
+    &[algin='left']{
+      td,th{
+        text-align: left;
+      }
+    }
+  }
 }
-/*圆角按钮*/
-.zh-button[around]{
-  border-radius:20px;
+/*选择框*/
+.checkbox{
+  width:13px;
+  height:13px;
+  border:1px solid #dcdcdc;
+  cursor:pointer;
+  line-height:12px;
+  color:#fff;
+  background-color:#fff;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-6px;
+  margin-top:-6px;
 }
-/*常用按钮部分     结束*/
+.checked{
+  background-color:#409eff;
+}

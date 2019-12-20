@@ -5,6 +5,7 @@ var httpAjax = function(options){
 		dataType:'json',
 		async:true, //异步请求
 		cache:false,
+		token:'', //
 		beforeSend:null, //请求前的处理
 		success:null, //请求成功的处理
 		error:null, //请求失败的处理
@@ -17,12 +18,12 @@ var httpAjax = function(options){
 		type:da.type, // 请求方式
 		headers:{
 			'Content-Type':da.contentType,
-			'access_token':da.token
+			'token':da.token
 		},
 		data:da.data, //请求参数
 		success:function(res){
 			if(res.code == 0){
-				da.success && da.success(res)
+				da.success && da.success(res.data)
 			}else{
 				alert(res.msg)
 			}
@@ -45,5 +46,5 @@ var Https = function(options){
     options.contentType = 'application/x-www-form-urlencoded';
 	}
 	options.token = sessionStorage.getItem('setToken');
-  httpAjax(options);
+	httpAjax(options);
 }

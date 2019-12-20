@@ -22,4 +22,4 @@ $(function () {
     $(this).next(".zh-drop-tag").removeClass("transform");
     event.stopPropagation(); //阻止事件冒泡
   });
-})
+});
