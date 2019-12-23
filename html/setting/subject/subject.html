@@ -13,13 +13,30 @@
 <body>
   <div class='zh-modal-background dn'></div>
   <div class='zh-loading'></div>
-  <div class='zh-modal-box dn'>弹窗蒙城</div>
+  <div class='zh-modal-box dn'>
+    <div class='zh-modal-content'>
+      <div class='zh-modal-head'>
+        系统提示
+        <div class='close-modal'>X</div>
+      </div>
+      <div class='zh-modal-body'>
+        <div class='zh-message-body'>
+          <div class='zh-modal-icon'><img src="../../../img/confirm.gif" alt=""></div>
+          <div class='zh-modal-title'>您确定要删除该科目吗？删除后不可恢复！</div>
+        </div>
+      </div>
+      <div class='zh-modal-footer'>
+        <div class='zh-button' size='mini'>取消</div>
+        <div class='zh-button' type='primary' size='mini'>确定</div>
+      </div>
+    </div>
+  </div>
   <div class='zh-card-box'>
     <div class='zh-card'>
       <div class='zh-card-header pr'>
         <ul class='zh-menubar flex' id='subjectMenu'>
           <li><div sType='ASSETS'>资产</div></li>
-          <li class='zh-active'><div sType='LIABILITY'>负债</div></li>
+          <li><div sType='LIABILITY'>负债</div></li>
           <li><div sType='RIGHTS_AND_INTERESTS'>权益</div></li>
           <li><div sType='COST'>成本</div></li>
           <li><div sType='PROFIT_AND_LOSS'>损益</div></li>
@@ -29,7 +46,7 @@
         <table class='zh-table' algin='center'>
           <thead>
             <tr>
-              <th checkbox><div class='checkbox checked'>✔</div></th>
+              <th checkbox><div class='checkbox'>✔</div></th>
               <th>编码</th>
               <th>名称</th>
               <th>类别</th>
@@ -45,13 +62,13 @@
             <tr>
               <td checkbox><div class='checkbox checked'>✔</div></td>
               <td>1001</td>
-              <td><p>库存现金</p></td>
+              <td align="left"><p>库存现金</p></td>
               <td>流动资产</td>
               <td>借</td>
               <td>客户</td>
               <td>AAA</td>
               <td>kg</td>
-              <td><div class='zh-switch'></div> </td>
+              <td><div class='zh-switch selected'></div> </td>
               <td style='width:235px;'>
                 <div class="zh-button" size="small" type="primary">增加下级</div>
                 <div class="zh-button" size="small">修改</div>

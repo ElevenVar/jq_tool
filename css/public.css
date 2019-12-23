@@ -136,9 +136,9 @@ body {
 /*开关样式*/
 .zh-switch {
   display: inline-block;
-  width: 44px;
-  height: 22px;
-  line-height: 20px;
+  width: 40px;
+  height: 18px;
+  line-height: 18px;
   border-radius: 22px;
   vertical-align: middle;
   border: 1px solid #ccc;
@@ -150,26 +150,33 @@ body {
 .zh-switch::before {
   content: "";
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   position: absolute;
   left: 3px;
-  top: 3px;
+  top: 2px;
   z-index: 1;
   background-color: #fff;
   border: 1px solid #fff;
 }
+.selected {
+  background-color: #409eff;
+  border: 1px solid #409eff;
+}
+.selected::before {
+  left: 24px;
+}
 /*弹窗背景蒙层*/
 .zh-modal-background {
-  border: 1px solid red;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #dcdcdc;
-  z-index: 1000;
+  background-color: #000;
+  z-index: 900;
+  opacity: 0.2;
 }
 /*转圈样式*/
 .zh-loading {
@@ -184,12 +191,63 @@ body {
 }
 /*弹窗内容*/
 .zh-modal-box {
+  background-color: #fff;
   position: absolute;
-  top: 132px;
+  border-radius: 3px;
+  overflow: hidden;
+  top: 50%;
   left: 50%;
   margin-left: -226px;
   width: 452px;
   z-index: 1001;
+}
+.zh-modal-box .zh-modal-content {
+  background-clip: padding-box;
+  position: relative;
+}
+.zh-modal-box .zh-modal-content .zh-modal-head {
+  cursor: move;
+  position: relative;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e8eaec;
+  font-size: 14px;
+  font-weight: bold;
+}
+.zh-modal-box .zh-modal-content .zh-modal-head .close-modal {
+  font-weight: 500;
+  position: absolute;
+  right: 9px;
+  top: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+.zh-modal-box .zh-modal-content .zh-modal-body {
+  padding: 8px 10px;
+}
+.zh-modal-box .zh-modal-content .zh-modal-body .zh-message-body {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  align-items: center;
+}
+.zh-modal-box .zh-modal-content .zh-modal-body .zh-message-body .zh-modal-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+}
+.zh-modal-box .zh-modal-content .zh-modal-body .zh-message-body .zh-modal-icon img {
+  width: 100%;
+  height: 100%;
+}
+.zh-modal-box .zh-modal-content .zh-modal-body .zh-message-body .zh-modal-title {
+  flex: 1;
+  color: #606266;
+  font-size: 14px;
+}
+.zh-modal-box .zh-modal-content .zh-modal-footer {
+  border-top: 1px solid #e8eaec;
+  padding: 8px 10px;
+  text-align: right;
 }
 /*高度自适应*/
 .zh-card-box {
@@ -222,6 +280,8 @@ body {
 /*表格数据渲染*/
 .zh-table-box {
   padding: 0 15px 15px;
+  max-height: calc(100% - 140px);
+  overflow: auto;
 }
 .zh-table-box .zh-table {
   width: 100%;
@@ -242,6 +302,10 @@ body {
   width: 40px;
   text-align: center;
   position: relative;
+}
+.zh-table-box .zh-table th[align='left'],
+.zh-table-box .zh-table td[align='left'] {
+  text-align: left !important;
 }
 .zh-table-box .zh-table thead th {
   font-weight: 500;

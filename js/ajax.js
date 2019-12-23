@@ -23,7 +23,7 @@ var httpAjax = function(options){
 		data:da.data, //请求参数
 		success:function(res){
 			if(res.code == 0){
-				da.success && da.success(res.data)
+				da.success && da.success(res.data);
 			}else{
 				alert(res.msg)
 			}

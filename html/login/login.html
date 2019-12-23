@@ -138,9 +138,9 @@
 					sessionId:$('#sessionId').val(),
 				},
 				success:function(res){
-					if(res.code == 0){
-						sessionStorage.setItem('setToken',res.data.token) //token储存
-						sessionStorage.setItem('company',JSON.stringify(res.data.company)); //储存公司信息
+					if(JSON.stringify(res) != "{}"){
+						sessionStorage.setItem('setToken',res.token) //token储存
+						sessionStorage.setItem('company',JSON.stringify(res.company)); //储存公司信息
 						location.href = "../home/home.html";
 					}
 				},
