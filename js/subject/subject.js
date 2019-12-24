@@ -1,3 +1,4 @@
+
 httpUrl={
   getMenu: '/api/subject/classification/get/allSubjectClassification',//查询头部导航栏
   getTable:'/api/subject/findlist', //查询表格数据
@@ -70,17 +71,19 @@ function getTableData(){
     },
   })
 };
-//删除按钮
-function deletRow(id){
-  console.log(id);
+//新增按钮点击事件
+function add_subject(){
+  console.log(1)
+};
+//删除按钮(单个删除)
+function deletRow(id){ //id:要删除的数据的id
   $('.zh-modal-background').removeClass('dn');
   $('.zh-modal-box').removeClass('dn');
-  $('.zh-modal-box').css({
-    width:'350px',
-    height:'170px',
-    'margin-top':"-85px",
-    'margin-left':'-175px',
-  })
+  delete_message('../../../img/confirm.gif',id); //创建删除提示框
+};
+//确定删除
+function delet_this(id){
+  console.log(id)
 };
 //设置导航栏数据
 function setMenu(res){

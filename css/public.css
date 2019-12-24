@@ -44,6 +44,46 @@ body {
 .dib {
   display: inline-block;
 }
+/*表单相关的*/
+.zh-input-box {
+  border: 1px solid #e8eaec;
+  line-height: 30px;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.zh-input-box input {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-indent: 8px;
+  border: none;
+}
+.zh-input-box input[disabled] {
+  background-color: #f5f7fa;
+  border-color: #e4e7ed;
+  color: #c0c4cc;
+  cursor: not-allowed;
+}
+.zh-form-box {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #606266;
+}
+.zh-form-box .zh-form ul li {
+  display: flex;
+  min-height: 30px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.zh-form-box .zh-form ul li .zh-form-item_label {
+  width: 90px;
+  padding: 0 12px 0 0;
+  text-align: right;
+}
+.zh-form-box .zh-form ul li .zh-form-item_content {
+  flex: 1;
+}
 /*常用按钮部分     开始*/
 /* <div class='zh-button' type='info' size='small' plain>保存</div>
     type:定义不同颜色的按钮
@@ -195,7 +235,7 @@ body {
   position: absolute;
   border-radius: 3px;
   overflow: hidden;
-  top: 50%;
+  top: 132px;
   left: 50%;
   margin-left: -226px;
   width: 452px;
@@ -223,6 +263,7 @@ body {
 }
 .zh-modal-box .zh-modal-content .zh-modal-body {
   padding: 8px 10px;
+  /*提示框*/
 }
 .zh-modal-box .zh-modal-content .zh-modal-body .zh-message-body {
   display: flex;
