@@ -65,6 +65,25 @@ body {
   color: #c0c4cc;
   cursor: not-allowed;
 }
+.zh-check {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  line-height: 12px;
+  color: #fff;
+  background-color: #fff;
+  margin-right: 2px;
+}
+.zh-checkbox-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.zh-checkbox-group div {
+  margin-right: 15px;
+}
 .zh-form-box {
   padding: 10px 16px;
   font-size: 14px;
@@ -361,7 +380,8 @@ body {
   text-align: left;
 }
 /*选择框*/
-.checkbox {
+.zh-checkbox {
+  display: inline-block;
   width: 13px;
   height: 13px;
   border: 1px solid #dcdcdc;
@@ -375,6 +395,6 @@ body {
   margin-left: -6px;
   margin-top: -6px;
 }
-.checked {
+.zh-checked {
   background-color: #409eff;
 }

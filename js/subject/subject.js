@@ -31,8 +31,8 @@ $('.zh-menubar').on('click','li',function(){
   getTableData();
 });
 //多选框点击事件
-$('.zh-table').on('click','.checkbox',function(){
-  $(this).toggleClass('checked');
+$('.zh-table').on('click','.zh-checkbox',function(){
+  $(this).toggleClass('zh-checked');
 });
 //开关按钮点击事件
 $('.zh-table').on('click','.zh-switch',function(){
@@ -104,7 +104,7 @@ function setTableData(res){
     var tr;
     for(var i = 0;i<res.length;i++){
       tr+="<tr id="+res[i].id+">"+
-      "<td checkbox><div class='checkbox'>✔</div></td>"+
+      "<td checkbox><div class='zh-checkbox'>✔</div></td>"+
       "<td>"+res[i].code+"</td>";
       if(res[i].subjectSeries == 1){
         tr+= "<td align='left'><p>"+res[i].name+"</p></td>";
