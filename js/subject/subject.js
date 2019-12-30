@@ -12,6 +12,14 @@ httpUrl={
 };
 $(function(){
   asyncInit();
+  //科目类别输入框获得焦点
+  $('.zh-form').on('focus','.subjectType',function(){
+    $('.zh-select-dropdown_').css({'display':'block'})
+  });
+  //科目类别点击选择
+  $('.zh_form').on('click','.zh-select-dropdown_',function(){
+    console.log(0);
+  })
 });
 //同步执行
 async function asyncInit(){
@@ -41,7 +49,7 @@ $('.zh-table').on('click','.zh-switch',function(){
   }else{
     $(this).addClass('selected');
   }
-})
+});
 //查询头部导航菜单
 function getMenu(){
   loading(true);
@@ -73,7 +81,8 @@ function getTableData(){
 };
 //新增按钮点击事件
 function add_subject(){
-  console.log(1)
+  $('.zh-modal-box').removeClass('dn');
+  $('.zh-modal-background').removeClass('dn');
 };
 //删除按钮(单个删除)
 function deletRow(id){ //id:要删除的数据的id
@@ -165,4 +174,7 @@ function setTableData(res){
     $('.zh-table tbody').append(tr);
   }
 }
+//动态创建弹窗的内容
+function createModal(){
 
+}

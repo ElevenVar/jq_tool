@@ -51,17 +51,16 @@ html,body{
 }
 /*表单相关的*/
 .zh-input-box{
-  border:1px solid #e8eaec;
   line-height:30px;
   height:100%;
-  border-radius:5px;
-  overflow:hidden;
   input{
+    border:none;
+    border-radius:5px;
+    border:1px solid #e8eaec;
     display: inline-block;
     width:100%;
-    height:100%;
+    height:30px;
     text-indent:8px;
-    border:none;
     &[disabled]{
       background-color: #f5f7fa;
       border-color: #e4e7ed;
@@ -90,11 +89,13 @@ html,body{
   }
 }
 .zh-form-box{
+  max-height:485px;
+  overflow:auto;
   padding:10px 16px;
   font-size:14px;
   color: #606266;
   .zh-form{
-    ul li{
+    ul .zh-form-item{
       display: flex;
       min-height:30px;
       line-height:30px;
@@ -106,6 +107,30 @@ html,body{
       }
       .zh-form-item_content{
         flex:1;
+      }
+    }
+  }
+}
+.zh-select-dropdown_{
+  display: none;
+  width:100%;
+  z-index: 1001;
+  border: 1px solid #e4e7ed;
+  border-radius: 4px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 5px 0;
+  .zh-select-dropdown_items{
+    padding:3px 0;
+    .zh-select-dropdown_item{
+      text-indent:15px;
+      padding:3px 0;
+      cursor: pointer;
+      &:hover{
+        background-color: #f5f7fa;
       }
     }
   }
