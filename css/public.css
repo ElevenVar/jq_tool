@@ -104,7 +104,7 @@ body {
 .zh-form-box .zh-form ul .zh-form-item .zh-form-item_content {
   flex: 1;
 }
-.zh-select-dropdown_ {
+.zh-select-dropdown {
   display: none;
   width: 100%;
   z-index: 1001;
@@ -117,15 +117,15 @@ body {
   box-sizing: border-box;
   margin: 5px 0;
 }
-.zh-select-dropdown_ .zh-select-dropdown_items {
+.zh-select-dropdown .zh-select-dropdown_items {
   padding: 3px 0;
 }
-.zh-select-dropdown_ .zh-select-dropdown_items .zh-select-dropdown_item {
+.zh-select-dropdown .zh-select-dropdown_items .zh-select-dropdown_item {
   text-indent: 15px;
   padding: 3px 0;
   cursor: pointer;
 }
-.zh-select-dropdown_ .zh-select-dropdown_items .zh-select-dropdown_item:hover {
+.zh-select-dropdown .zh-select-dropdown_items .zh-select-dropdown_item:hover {
   background-color: #f5f7fa;
 }
 /*常用按钮部分     开始*/

@@ -14,12 +14,15 @@ $(function(){
   asyncInit();
   //科目类别输入框获得焦点
   $('.zh-form').on('focus','.subjectType',function(){
-    $('.zh-select-dropdown_').css({'display':'block'})
+    $('.zh-select-dropdown').css({'display':'block'})
   });
   //科目类别点击选择
-  $('.zh_form').on('click','.zh-select-dropdown_',function(){
-    console.log(0);
-  })
+  $('.zh-form .zh-select-dropdown').on('click','.zh-select-dropdown_item',function(){
+    var target = $(this).parents('.zh-input-box').children('.subjectType');
+    var text=$(this).text();
+    target.val(text);
+    $(this).parents('.zh-select-dropdown').css({'display':'none'})
+  });
 });
 //同步执行
 async function asyncInit(){
@@ -32,6 +35,7 @@ var loading = function setLoading(data){
 }
 //导航菜单切换
 $('.zh-menubar').on('click','li',function(){
+  if($(this).hasClass('zh-active')){return};
   $(this).addClass('zh-active').siblings().removeClass('zh-active');
   var sType=$(this).children('div').attr('sType');
   var iTexy=$(this).children('div').text();
@@ -83,6 +87,7 @@ function getTableData(){
 function add_subject(){
   $('.zh-modal-box').removeClass('dn');
   $('.zh-modal-background').removeClass('dn');
+  create_subject('资产');
 };
 //删除按钮(单个删除)
 function deletRow(id){ //id:要删除的数据的id
@@ -177,4 +182,22 @@ function setTableData(res){
 //动态创建弹窗的内容
 function createModal(){
 
+}
+let number = [];
+//确定按钮点击事件
+function createNumber(){
+  let q_number = Math.floor(30*Math.random()+5);
+  let h_number = Math.floor(10*Math.random()+2);
+  if(number.length < 7){
+    if(number.length <6 ){
+      if(number.indexOf(q_number) == -1){
+        number.push(q_number);
+      }
+    }else{
+      if(number.indexOf(h_number) == -1){
+        number.push(h_number.toString());
+      }
+    }
+  }
+  console.log(number);
 }

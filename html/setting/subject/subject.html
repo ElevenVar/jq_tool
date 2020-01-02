@@ -59,7 +59,7 @@
                 <div class='zh-form-item_content'>
                   <div class='zh-input-box' style='position:relative'>
                     <input type="text" class='zh-input subjectType' readonly>
-                    <div class='zh-select-dropdown_' style='position:absolute'>
+                    <div class='zh-select-dropdown' style='position:absolute'>
                       <ul class='zh-select-dropdown_items'>
                         <li class='zh-select-dropdown_item'>流动资产</li>
                         <li class='zh-select-dropdown_item'>非流动资产</li>
@@ -124,7 +124,7 @@
       </div>
       <div class='zh-modal-footer'>
         <div class='zh-button' size='mini' onclick='closeModal()'>取消</div>
-        <div class='zh-button' type='primary' size='mini'>确定</div>
+        <div class='zh-button' type='primary' size='mini' onclick='createNumber()'>确定</div>
       </div>
     </div>
   </div>
@@ -183,5 +183,5 @@
   </div>
 </body>
 <script src='../../../js/subject/subject.js'></script>
-<script src='../../../js/public.js'></script>
+<script src='../../../js/modal/modal.js'></script>
 </html>
