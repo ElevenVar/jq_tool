@@ -104,26 +104,23 @@
 					</div>
 					<div class="richard-content-content">
 						<div class='zh-picContainer'>
-							<div class="zh-picItem">
-								<div class="zh-picCheck">
-									<input class='zh-checkbox' type="checkbox">
-									<span>增值税专用发票(收入)</span>
+							<transition-group tag="div" class="container" style='display: flex;flex-direction: row;flex-wrap: wrap;overflow: auto;border:1px solid red;'>
+								<div class="item imgBox" v-for="(item,index) in imgList" :key="item.key"
+									draggable="true" @dragstart="handleDragStart($event, item)" @dragover.prevent="handleDragOver($event, item)"
+									@dragenter="handleDragEnter($event, item)" @dragend="handleDragEnd($event, item)"
+								>
+									<div class="zh-picItem">
+										<div class="zh-picCheck"> 
+											<input class='zh-checkbox' type="checkbox">
+											<span>增值税专用发票(收入)</span>
+										</div>
+										<div class="zh-pic">
+											<img src="../../img/1.jpg" alt="">
+										</div>
+										<div class="zh-picNo">StringTheory_01</div>
+									</div>
 								</div>
-								<div class="zh-pic">
-									<img src="../../img/1.jpg" alt="">
-								</div>
-								<div class="zh-picNo">StringTheory_01</div>
-							</div>
-							<div class="zh-picItem">
-								<div class="zh-picCheck">
-									<input class='zh-checkbox' type="checkbox">
-									<span>增值税专用发票(收入)</span>
-								</div>
-								<div class="zh-pic">
-									<img src="../../img/1.jpg" alt="">
-								</div>
-								<div class="zh-picNo">StringTheory_02</div>
-							</div>
+           	 	</transition-group>
 						</div>
 					</div>
 				</div>
