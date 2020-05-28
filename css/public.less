@@ -67,6 +67,10 @@ html,body{
       color: #c0c4cc;
       cursor: not-allowed;
     }
+    &:focus{
+      border-color: #409EFF;
+      outline: 0;
+    }
   }
 }
 .zh-check{
@@ -312,6 +316,7 @@ html,body{
     }
     .zh-modal-body{
       padding:8px 10px;
+      overflow:auto;
       /*提示框*/
       .zh-message-body{
         display: flex;

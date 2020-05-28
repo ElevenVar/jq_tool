@@ -64,6 +64,10 @@ body {
   color: #c0c4cc;
   cursor: not-allowed;
 }
+.zh-input-box input:focus {
+  border-color: #409EFF;
+  outline: 0;
+}
 .zh-check {
   display: inline-block;
   width: 12px;
@@ -307,6 +311,7 @@ body {
 }
 .zh-modal-box .zh-modal-content .zh-modal-body {
   padding: 8px 10px;
+  overflow: auto;
   /*提示框*/
 }
 .zh-modal-box .zh-modal-content .zh-modal-body .zh-message-body {

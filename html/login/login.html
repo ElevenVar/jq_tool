@@ -1,153 +1,182 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="icon" href="../../img/favicon.ico">
-		<title>ZH · 记账工具</title>
-		<script src='../../node_modules/_jquery@3.4.1@jquery/dist/jquery.min.js'></script>
-		<script src='../../js/ajax.js'></script>
-		<script src='../../js/api.js'></script>
-		<style>
-			html,body{
-				height:100%;
-			}
-			*{
-				margin:0;padding:0;
-			}
-			#content{
-				height:100%;background-image:url('../../img/loginImg/bgImg.png');
-				overflow:hidden;
-				background-size: cover;
-				background-position: center;
-				position: relative;
-			}
-			.formBox{
-				width:428px;height:400px;position:absolute;top:50%;left:50%;margin-left:-214px;margin-top:-200px;
-				border-radius:12px;overflow:hidden;
-			}
-			.formHeader{
-				width: 428px;
-				height: 117px;
-				background-color: #0371d1;
-				font-size: 30px;
-				font-weight: normal;
-				font-stretch: normal;
-				letter-spacing: 0;
-				color: #fff;
-				line-height: 117px;
-				text-align: center;
-				overflow: hidden;
-				transform: rotate(0deg);
-				position: relative;
-			}
-			.formContent{
-				background-color:#fff;
-				height:calc(400px - 117px);
-			}
-			.form{
-				width: 288px;
-				margin: 0 auto;
-				padding-top: 40px;
-				padding-bottom: 15px;
-				position: relative;
-			}
-			.item{
-				width: 288px;
-				height: 35px;
-				border-bottom: 1px solid #dae1e6;
-				margin-bottom: 35px;
-			}
-			.item:last-child{
-				margin:0;
-			}
-			.item .inputName {
-				display: inline-block;
-				width: 227px;
-				height: 22px;
-				padding: 0;
-				position: absolute;
-				border: 0;
-				outline: 0;
-				font-size: 14px;
-				letter-spacing: 0;
-			}
-			.item .icon{
-				display: inline-block;
-				width: 33px;
-				height: 22px;
-			}
-			.icon-2{
-				background: url('../../img/loginImg/icon-login.png') no-repeat -54px 0;
-			}
-			.icon-3 {
-				background: url('../../img/loginImg/icon-login.png') no-repeat -106px 0;
-			}
-			.icon-4 {
-				background: url('../../img/loginImg/icon-login.png') no-repeat 0 -43px;
-				position: absolute;
-				right: -10px;
-				cursor: pointer;
-			}
-			.icon-5 {
-				background: url('../../img/loginImg/icon-login.png') no-repeat -55px -43px;
-			}
-			.formButton{
-				width: 288px;
-				height: 40px;
-				background-color: #0371d1;
-				border-radius: 20px;
-				margin: 24px auto 0;
-				text-align: center;
-				line-height: 40px;
-				color: #fff;
-				font-size: 14px;
-				letter-spacing: 0;
-				cursor: pointer;
-			}
-		</style>
-	</head>
-	<body>
-		<div id='content' class=''>
-			<div class='formBox'>
-				<div class='formHeader'>ZH · 工具</div>
-				<div class='formContent'>
-					<div class='form'>
-						<div class='item'>
-							<span class="icon icon-2"></span>
-							<input class='inputName' id='companyId' value='' type="text" v-model="form.companyId" placeholder="请输入账号" maxlength="20">
-						</div>
-						<div class='item'>
-							<span class="icon icon-3"></span>
-							<input class='inputName' id='sessionId' value='' type="password" placeholder="请输入密码" maxlength="20">
-							<!-- <span class="icon icon-4" :class=" hide ? '' : 'icon-5' " @click="hideClick"></span> -->
-						</div>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="../../img/favicon.ico">
+	<title>ZH · 记账工具</title>
+	<script src='../../node_modules/_jquery@3.4.1@jquery/dist/jquery.min.js'></script>
+	<script src='../../js/ajax.js'></script>
+	<script src='../../js/api.js'></script>
+	<style>
+		html,
+		body {
+			height: 100%;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#content {
+			height: 100%;
+			background-image: url('../../img/loginImg/bgImg.png');
+			overflow: hidden;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+		}
+
+		.formBox {
+			width: 428px;
+			height: 400px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -214px;
+			margin-top: -200px;
+			border-radius: 12px;
+			overflow: hidden;
+		}
+
+		.formHeader {
+			width: 428px;
+			height: 117px;
+			background-color: #0371d1;
+			font-size: 30px;
+			font-weight: normal;
+			font-stretch: normal;
+			letter-spacing: 0;
+			color: #fff;
+			line-height: 117px;
+			text-align: center;
+			overflow: hidden;
+			transform: rotate(0deg);
+			position: relative;
+		}
+
+		.formContent {
+			background-color: #fff;
+			height: calc(400px - 117px);
+		}
+
+		.form {
+			width: 288px;
+			margin: 0 auto;
+			padding-top: 40px;
+			padding-bottom: 15px;
+			position: relative;
+		}
+
+		.item {
+			width: 288px;
+			height: 35px;
+			border-bottom: 1px solid #dae1e6;
+			margin-bottom: 35px;
+		}
+
+		.item:last-child {
+			margin: 0;
+		}
+
+		.item .inputName {
+			display: inline-block;
+			width: 227px;
+			height: 22px;
+			padding: 0;
+			position: absolute;
+			border: 0;
+			outline: 0;
+			font-size: 14px;
+			letter-spacing: 0;
+		}
+
+		.item .icon {
+			display: inline-block;
+			width: 33px;
+			height: 22px;
+		}
+
+		.icon-2 {
+			background: url('../../img/loginImg/icon-login.png') no-repeat -54px 0;
+		}
+
+		.icon-3 {
+			background: url('../../img/loginImg/icon-login.png') no-repeat -106px 0;
+		}
+
+		.icon-4 {
+			background: url('../../img/loginImg/icon-login.png') no-repeat 0 -43px;
+			position: absolute;
+			right: -10px;
+			cursor: pointer;
+		}
+
+		.icon-5 {
+			background: url('../../img/loginImg/icon-login.png') no-repeat -55px -43px;
+		}
+
+		.formButton {
+			width: 288px;
+			height: 40px;
+			background-color: #0371d1;
+			border-radius: 20px;
+			margin: 24px auto 0;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			font-size: 14px;
+			letter-spacing: 0;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div id='content' class=''>
+		<div class='formBox'>
+			<div class='formHeader'>ZH · 工具</div>
+			<div class='formContent'>
+				<div class='form'>
+					<div class='item'>
+						<span class="icon icon-2"></span>
+						<input class='inputName' id='companyId' value='' type="text" v-model="form.companyId" placeholder="请输入账号"
+							maxlength="20">
 					</div>
-					<div class='formButton' id='subButton'>登录</div>
+					<div class='item'>
+						<span class="icon icon-3"></span>
+						<input class='inputName' id='sessionId' value='' type="password" placeholder="请输入密码" maxlength="20">
+						<!-- <span class="icon icon-4" :class=" hide ? '' : 'icon-5' " @click="hideClick"></span> -->
+					</div>
 				</div>
+				<div class='formButton' id='subButton'>登录</div>
 			</div>
 		</div>
-	</body>
-	<script>
-		$('#subButton').click(function(){
-			loginHttp({
-				url: httpUrl.login,
-				type:"post",
-				data:{
-					companyId:$('#companyId').val(),
-					sessionId:$('#sessionId').val(),
-				},
-				success:function(res){
-					if(JSON.stringify(res) != "{}"){
-						sessionStorage.setItem('setToken',res.token) //token储存
-						sessionStorage.setItem('company',JSON.stringify(res.company)); //储存公司信息
-						location.href = "../home/home.html";
-					}
-				},
-				error:function(res){
-					console.log(res)
+	</div>
+</body>
+<script>
+	$('#subButton').click(function () {
+		loginHttp({
+			url: httpUrl.login,
+			type: "post",
+			data: {
+				companyId: $('#companyId').val(),
+				sessionId: $('#sessionId').val(),
+			},
+			success: function (res) {
+				if (JSON.stringify(res) != "{}") {
+					sessionStorage.setItem('setToken', res.token) //token储存
+					sessionStorage.setItem('company', JSON.stringify(res.company)); //储存公司信息
+					location.href = "../home/home.html";
 				}
-			})
+			},
+			error: function (res) {
+				console.log(res)
+			}
 		})
-	</script>
+	})
+</script>
+
 </html>

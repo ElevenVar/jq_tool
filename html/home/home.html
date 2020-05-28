@@ -1,121 +1,124 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="icon" href="../../img/favicon.ico">
-		<title>ZH · 记账工具</title>
-		<link rel="stylesheet" href="../../css/home/home.css">
-		<script src='../../node_modules/_jquery@3.4.1@jquery/dist/jquery.min.js'></script>
-		<script src='../../js/ajax.js'></script>
-		<script src='../../js/api.js'></script>
-	</head>
-	<body>
-		<div class='content'>
-			<div class='contentLeft'>
-				<ul id='nav' class='navLeft'>
-					<li class='item richardPaper' src='./homeWork.html'>工作台</li>
-					<li class='item'>
-						<div>智能记账</div>
-						<div class='sub-nav-wrap' style='top:3px;'>
-							<ul class='sub-nav'>
-								<li class='sub-navList richardPaper' src='../bill/richardPaper.html'>理票据</li>
-							</ul>
-							<b></b>
-						</div>
-					</li>
-					<li class='item'>
-						<div>凭证</div>
-						<div class='sub-nav-wrap' style='top:-25px;'>
-							<ul class='sub-nav'>
-								<li class='sub-navList richardPaper' src="../voucher/createVoucher.html">录凭证</li>
-								<li class='sub-navList richardPaper'>查凭证</li>
-								<li class='sub-navList richardPaper'>凭证汇总表</li>
-							</ul>
-							<b></b>
-						</div>
-					</li>
-					<li class='item'>
-						<div>账簿</div>
-						<div class='sub-nav-wrap' style='top:-55px;'>
-							<ul class='sub-nav'>
-								<li class='sub-navList richardPaper'>总账</li>
-								<li class='sub-navList richardPaper'>明细账</li>
-								<li class='sub-navList richardPaper'>多栏账</li>
-								<li class='sub-navList richardPaper'>科目余额表</li>
-								<li class='sub-navList richardPaper'>数量金额总账</li>
-							</ul>
-							<b></b>
-						</div>
-					</li>
-					<li class='item'>
-						<div>报表</div>
-						<div class='sub-nav-wrap' style='top:-55px;'>
-							<ul class='sub-nav'>
-								<li class='sub-navList richardPaper' src='../reportForms/profitTable.html'>利润表</li>
-								<li class='sub-navList richardPaper'>资产负载表</li>
-								<li class='sub-navList richardPaper'>业务活动表</li>
-								<li class='sub-navList richardPaper'>现金流量表</li>
-								<li class='sub-navList richardPaper'>折旧汇总表</li>
-								<li class='sub-navList richardPaper'>折旧明细表</li>
-							</ul>
-							<b></b>
-						</div>
-					</li>
-					<li class='item richardPaper' src='../salary/salary.html'>工资</li>
-					<li class='item richardPaper' src='../settleAccounts/settleAccounts.html'>结账</li>
-					<li class='item'>
-						<div>资产</div>
-						<div class='sub-nav-wrap' style='top:-10px;'>
-							<ul class='sub-nav'>
-								<li class='sub-navList richardPaper'>资产类别</li>
-								<li class='sub-navList richardPaper'>资产管理</li>
-							</ul>
-							<b></b>
-						</div>
-					</li>
-					<li class='item'>
-						<div>设置</div>
-						<div class='sub-nav-wrap' style='top:-10px;'>
-							<ul class='sub-nav'>
-								<li class='sub-navList richardPaper' src='../setting/subject/subject.html'>科目</li>
-								<li class='sub-navList richardPaper' src='../setting/currency/currency.html'>币别</li>
-							</ul>
-							<b></b>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class='contentRight'>
-				<div class='contentRightTop'>
-					<div class='contentRightTop-left'>
-						<div style='color: rgb(51, 51, 51);font-weight: bold;font-size: 18px;margin-right: 10px;'>成都风车车物流有限公司</div>
-						<div style='color: rgb(64, 158, 255);font-size:14px;line-height:25px;'>一般纳税人</div>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="../../img/favicon.ico">
+	<title>ZH · 记账工具</title>
+	<link rel="stylesheet" href="../../css/home/home.css">
+	<script src='../../node_modules/_jquery@3.4.1@jquery/dist/jquery.min.js'></script>
+	<script src='../../js/ajax.js'></script>
+	<script src='../../js/api.js'></script>
+</head>
+
+<body>
+	<div class='content'>
+		<div class='contentLeft'>
+			<ul id='nav' class='navLeft'>
+				<li class='item richardPaper' src='./homeWork.html'>工作台</li>
+				<li class='item'>
+					<div>智能记账</div>
+					<div class='sub-nav-wrap' style='top:3px;'>
+						<ul class='sub-nav'>
+							<li class='sub-navList richardPaper' src='../bill/richardPaper.html'>理票据</li>
+						</ul>
+						<b></b>
 					</div>
+				</li>
+				<li class='item'>
+					<div>凭证</div>
+					<div class='sub-nav-wrap' style='top:-25px;'>
+						<ul class='sub-nav'>
+							<li class='sub-navList richardPaper' src="../voucher/createVoucher.html">录凭证</li>
+							<li class='sub-navList richardPaper'>查凭证</li>
+							<li class='sub-navList richardPaper'>凭证汇总表</li>
+						</ul>
+						<b></b>
+					</div>
+				</li>
+				<li class='item'>
+					<div>账簿</div>
+					<div class='sub-nav-wrap' style='top:-55px;'>
+						<ul class='sub-nav'>
+							<li class='sub-navList richardPaper'>总账</li>
+							<li class='sub-navList richardPaper'>明细账</li>
+							<li class='sub-navList richardPaper'>多栏账</li>
+							<li class='sub-navList richardPaper'>科目余额表</li>
+							<li class='sub-navList richardPaper'>数量金额总账</li>
+						</ul>
+						<b></b>
+					</div>
+				</li>
+				<li class='item'>
+					<div>报表</div>
+					<div class='sub-nav-wrap' style='top:-55px;'>
+						<ul class='sub-nav'>
+							<li class='sub-navList richardPaper' src='../reportForms/profitTable.html'>利润表</li>
+							<li class='sub-navList richardPaper'>资产负载表</li>
+							<li class='sub-navList richardPaper'>业务活动表</li>
+							<li class='sub-navList richardPaper'>现金流量表</li>
+							<li class='sub-navList richardPaper'>折旧汇总表</li>
+							<li class='sub-navList richardPaper'>折旧明细表</li>
+						</ul>
+						<b></b>
+					</div>
+				</li>
+				<li class='item richardPaper' src='../salary/salary.html'>工资</li>
+				<li class='item richardPaper' src='../settleAccounts/settleAccounts.html'>结账</li>
+				<li class='item'>
+					<div>资产</div>
+					<div class='sub-nav-wrap' style='top:-10px;'>
+						<ul class='sub-nav'>
+							<li class='sub-navList richardPaper'>资产类别</li>
+							<li class='sub-navList richardPaper'>资产管理</li>
+						</ul>
+						<b></b>
+					</div>
+				</li>
+				<li class='item'>
+					<div>设置</div>
+					<div class='sub-nav-wrap' style='top:-10px;'>
+						<ul class='sub-nav'>
+							<li class='sub-navList richardPaper' src='../setting/subject/subject.html'>科目</li>
+							<li class='sub-navList richardPaper' src='../setting/currency/currency.html'>币别</li>
+						</ul>
+						<b></b>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class='contentRight'>
+			<div class='contentRightTop'>
+				<div class='contentRightTop-left'>
+					<div style='color: rgb(51, 51, 51);font-weight: bold;font-size: 18px;margin-right: 10px;'>成都风车车物流有限公司</div>
+					<div style='color: rgb(64, 158, 255);font-size:14px;line-height:25px;'>一般纳税人</div>
+				</div>
+				<div>
 					<div>
-						<div>
-							<span>当前期数:</span>
-							<span>2019年第7期</span>
-						</div>
+						<span>当前期数:</span>
+						<span>2019年第7期</span>
 					</div>
 				</div>
-				<div class='contentRightMenu' id="contentRightMenu">
-					<div class='menulist-box' src='./homeWork.html'>
-						<div class='yuan on'></div>
-						<div class='text'>工作台</div>
-						<div class='closeThis'>X</div>
-					</div>
+			</div>
+			<div class='contentRightMenu' id="contentRightMenu">
+				<div class='menulist-box' src='./homeWork.html'>
+					<div class='yuan on'></div>
+					<div class='text'>工作台</div>
+					<div class='closeThis'>X</div>
 				</div>
-				<div class='contentRightMenuContent' id = "contentRightMenuContent">
-					<div class='iframeBox block'>
-						<div class='loading' style='display: none;'></div>
-						<!-- <iframe src="./homeWork.html" frameborder="0"></iframe> -->
-						<iframe src="../bill/richardPaper.html" frameborder="0"></iframe>
-						<!-- <iframe src="../setting/subject/subject.html" frameborder="0"></iframe> -->
-					</div>
+			</div>
+			<div class='contentRightMenuContent' id="contentRightMenuContent">
+				<div class='iframeBox block'>
+					<div class='loading' style='display: none;'></div>
+					<!-- <iframe src="./homeWork.html" frameborder="0"></iframe> -->
+					<!-- <iframe src="../bill/richardPaper.html" frameborder="0"></iframe> -->
+					<iframe src="../setting/subject/subject.html" frameborder="0"></iframe>
 				</div>
 			</div>
 		</div>
-	</body>
-	<script src='../../js/home.js'></script>
+	</div>
+</body>
+<script src='../../js/home.js'></script>
+
 </html>

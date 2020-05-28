@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../../../css/public.css">
   <script src='../../../node_modules/_jquery@3.4.1@jquery/dist/jquery.min.js'></script>
+  <script src="../../../node_modules/Tdrage.js"></script>
   <script src='../../../js/ajax.js'></script>
-		<script src='../../../js/api.js'></script>
+  <script src='../../../js/api.js'></script>
   <title>科目</title>
   <style>
-    .subject-button{
-      position:absolute;
-      right:25px;
-      top:10px;
+    .subject-button {
+      position: absolute;
+      right: 25px;
+      top: 10px;
     }
   </style>
 </head>
+
 <body>
-  <div class='zh-modal-background'></div>
+  <div class='zh-modal-background dn'></div>
   <div class='zh-loading'></div>
-  <div class='zh-modal-box'>
+  <div class='zh-modal-box dn'>
     <div class='zh-modal-content'>
       <div class='zh-modal-head'>
         新增科目
@@ -132,11 +135,21 @@
     <div class='zh-card'>
       <div class='zh-card-header pr'>
         <ul class='zh-menubar flex' id='subjectMenu'>
-          <li><div sType='ASSETS'>资产</div></li>
-          <li><div sType='LIABILITY'>负债</div></li>
-          <li><div sType='RIGHTS_AND_INTERESTS'>权益</div></li>
-          <li><div sType='COST'>成本</div></li>
-          <li><div sType='PROFIT_AND_LOSS'>损益</div></li>
+          <li>
+            <div sType='ASSETS'>资产</div>
+          </li>
+          <li>
+            <div sType='LIABILITY'>负债</div>
+          </li>
+          <li>
+            <div sType='RIGHTS_AND_INTERESTS'>权益</div>
+          </li>
+          <li>
+            <div sType='COST'>成本</div>
+          </li>
+          <li>
+            <div sType='PROFIT_AND_LOSS'>损益</div>
+          </li>
         </ul>
         <div class='subject-button'>
           <div class='zh-button' size='small' type='primary' onclick='add_subject()'>新增</div>
@@ -147,7 +160,9 @@
         <table class='zh-table' algin='center'>
           <thead>
             <tr>
-              <th checkbox><div class='zh-checkbox'>✔</div></th>
+              <th checkbox>
+                <div class='zh-checkbox'>✔</div>
+              </th>
               <th>编码</th>
               <th>名称</th>
               <th>类别</th>
@@ -161,15 +176,21 @@
           </thead>
           <tbody>
             <tr>
-              <td checkbox><div class='zh-checkbox checked'>✔</div></td>
+              <td checkbox>
+                <div class='zh-checkbox checked'>✔</div>
+              </td>
               <td>1001</td>
-              <td align="left"><p>库存现金</p></td>
+              <td align="left">
+                <p>库存现金</p>
+              </td>
               <td>流动资产</td>
               <td>借</td>
               <td>客户</td>
               <td>AAA</td>
               <td>kg</td>
-              <td><div class='zh-switch selected'></div> </td>
+              <td>
+                <div class='zh-switch selected'></div>
+              </td>
               <td style='width:235px;'>
                 <div class="zh-button" size="small" type="primary">增加下级</div>
                 <div class="zh-button" size="small">修改</div>
@@ -184,4 +205,5 @@
 </body>
 <script src='../../../js/subject/subject.js'></script>
 <script src='../../../js/modal/modal.js'></script>
+
 </html>

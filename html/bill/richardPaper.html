@@ -1,169 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="icon" href="../../img/favicon.ico">
-		<link rel="stylesheet" href="../../css/publicHeader.css">
-		<link rel="stylesheet" href="../../css/richard.css">
-		<script src='../../node_modules/_jquery@3.4.1@jquery/dist/jquery.min.js'></script>
-		<script src='../../js/public.js'></script>
-		<title>理票据</title>
-	</head>
-	<body>
-		<div class="richardPaper">
-			<div class="public-header">
-				<div class='zh-items' style="width:180px;">
-					<div class='zh-items-label'>期间：</div>
-					<div class='zh-items-select'>
-						<div class="zh-input">
-							<input type="text" readonly>
-							<span class="zh-drop-tag"></span>
-						</div>
-						<div class='zh-select-dropdown'>
-							<ul>
-								<li val="退回">退回-不清晰</li>
-								<li>退回-不记账</li>
-								<li>退回-其他</li>
-							</ul>
-						</div>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" href="../../img/favicon.ico">
+	<link rel="stylesheet" href="../../css/publicHeader.css">
+	<link rel="stylesheet" href="../../css/richard.css">
+	<script src='../../node_modules/_jquery@3.4.1@jquery/dist/jquery.min.js'></script>
+	<script src='../../js/public.js'></script>
+	<title>理票据</title>
+</head>
+
+<body>
+	<div class="richardPaper">
+		<div class="public-header">
+			<div class='zh-items' style="width:180px;">
+				<div class='zh-items-label'>期间：</div>
+				<div class='zh-items-select'>
+					<div class="zh-input">
+						<input type="text" readonly>
+						<span class="zh-drop-tag"></span>
 					</div>
-				</div>
-				<div class='zh-items' style="width:180px;">
-					<div class='zh-items-label'>票据状态：</div>
-					<div class='zh-items-select'>
-						<div class="zh-input">
-							<input type="text">
-							<span class="zh-drop-tag"></span>
-						</div>
-						<div class='zh-select-dropdown'>
-							<ul>
-								<li val="退回">退回-不清晰</li>
-								<li>退回-不记账</li>
-								<li>退回-其他</li>
-							</ul>
-						</div>
+					<div class='zh-select-dropdown'>
+						<ul>
+							<li val="退回">退回-不清晰</li>
+							<li>退回-不记账</li>
+							<li>退回-其他</li>
+						</ul>
 					</div>
-				</div>
-				<div class='zh-items' style="width:250px;">
-					<div class='zh-items-label'>票据类型：</div>
-					<div class='zh-items-select'>
-						<div class="zh-input">
-							<input type="text">
-							<span class="zh-drop-tag"></span>
-						</div>
-						<div class='zh-select-dropdown'>
-							<ul>
-								<li val="退回">退回-不清晰</li>
-								<li>退回-不记账</li>
-								<li>退回-其他</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class='zh-items' style="width:180px;">
-					<div class='zh-items-label'>票据状态：</div>
-					<div class='zh-items-select'>
-						<div class="zh-input">
-							<input type="text">
-							<span class="zh-drop-tag"></span>
-						</div>
-						<div class='zh-select-dropdown'>
-							<ul>
-								<li val="退回">退回-不清晰</li>
-								<li>退回-不记账</li>
-								<li>退回-其他</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class='zh-items' style="width:60px;">
-					<div class='zh-button'>查询</div>
 				</div>
 			</div>
-			<div class="public-content">
-				<div class="richard-content">
-					<div class="richard-content-header">
-						<div class='zh-button-box'>
-							<button class='zh-button-primary'>汇总生成凭证</button>
-						</div>
-						<div class="zh-button-box">
-							<button class='zh-button-primary'>退回</button>
-						</div>
-						<div class="zh-button-box">
-							<button class='zh-button-primary'>跨期</button>
-						</div>
-						<div class="rch-right">
-							<div class="on">图像</div>
-							<div class="">列表</div>
-						</div>
+			<div class='zh-items' style="width:180px;">
+				<div class='zh-items-label'>票据状态：</div>
+				<div class='zh-items-select'>
+					<div class="zh-input">
+						<input type="text">
+						<span class="zh-drop-tag"></span>
 					</div>
-					<div class="check-all-box">
-						<input class='zh-checkbox' type="checkbox">全选
+					<div class='zh-select-dropdown'>
+						<ul>
+							<li val="退回">退回-不清晰</li>
+							<li>退回-不记账</li>
+							<li>退回-其他</li>
+						</ul>
 					</div>
-					<div class="richard-content-content">
-						<div class='zh-picContainer'>
-							<transition-group tag="div" class="container" style='display: flex;flex-direction: row;flex-wrap: wrap;overflow: auto;border:1px solid red;'>
-								<div class="item imgBox" v-for="(item,index) in imgList" :key="item.key"
-									draggable="true" @dragstart="handleDragStart($event, item)" @dragover.prevent="handleDragOver($event, item)"
-									@dragenter="handleDragEnter($event, item)" @dragend="handleDragEnd($event, item)"
-								>
-									<div class="zh-picItem">
-										<div class="zh-picCheck"> 
-											<input class='zh-checkbox' type="checkbox">
-											<span>增值税专用发票(收入)</span>
-										</div>
-										<div class="zh-pic">
-											<img src="../../img/1.jpg" alt="">
-										</div>
-										<div class="zh-picNo">StringTheory_01</div>
+				</div>
+			</div>
+			<div class='zh-items' style="width:250px;">
+				<div class='zh-items-label'>票据类型：</div>
+				<div class='zh-items-select'>
+					<div class="zh-input">
+						<input type="text">
+						<span class="zh-drop-tag"></span>
+					</div>
+					<div class='zh-select-dropdown'>
+						<ul>
+							<li val="退回">退回-不清晰</li>
+							<li>退回-不记账</li>
+							<li>退回-其他</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class='zh-items' style="width:180px;">
+				<div class='zh-items-label'>票据状态：</div>
+				<div class='zh-items-select'>
+					<div class="zh-input">
+						<input type="text">
+						<span class="zh-drop-tag"></span>
+					</div>
+					<div class='zh-select-dropdown'>
+						<ul>
+							<li val="退回">退回-不清晰</li>
+							<li>退回-不记账</li>
+							<li>退回-其他</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class='zh-items' style="width:60px;">
+				<div class='zh-button'>查询</div>
+			</div>
+		</div>
+		<div class="public-content">
+			<div class="richard-content">
+				<div class="richard-content-header">
+					<div class='zh-button-box'>
+						<button class='zh-button-primary'>汇总生成凭证</button>
+					</div>
+					<div class="zh-button-box">
+						<button class='zh-button-primary'>退回</button>
+					</div>
+					<div class="zh-button-box">
+						<button class='zh-button-primary'>跨期</button>
+					</div>
+					<div class="rch-right">
+						<div class="on">图像</div>
+						<div class="">列表</div>
+					</div>
+				</div>
+				<div class="check-all-box">
+					<input class='zh-checkbox' type="checkbox">全选
+				</div>
+				<div class="richard-content-content">
+					<div class='zh-picContainer'>
+						<transition-group tag="div" class="container"
+							style='display: flex;flex-direction: row;flex-wrap: wrap;overflow: auto;border:1px solid red;'>
+							<div class="item imgBox" v-for="(item,index) in imgList" :key="item.key" draggable="true"
+								ondragstart="handleDragStart($event, item)" ondragover.prevent="handleDragOver($event, item)"
+								ondragenter="handleDragEnter($event, item)" ondragend="handleDragEnd($event, item)">
+								<div class="zh-picItem">
+									<div class="zh-picCheck">
+										<input class='zh-checkbox' type="checkbox">
+										<span>增值税专用发票(收入)</span>
 									</div>
+									<div class="zh-pic">
+										<img src="../../img/1.jpg" alt="">
+									</div>
+									<div class="zh-picNo">StringTheory_01</div>
 								</div>
-           	 	</transition-group>
-						</div>
+							</div>
+						</transition-group>
 					</div>
 				</div>
 			</div>
 		</div>
-	</body>
-	<script>
-		$(function(){
-			// creatDiv();
-		})
-		function creatDiv(){
-			var div='';
-			for(var i= 0;i<30;i++){
-				div +="<div class='zh-picItem'>"+
-								"<div class='zh-picCheck'>"+
-									"<input class='zh-checkbox' type='checkbox'>"+
-									"<span>增值税专用发票(收入)</span>"+
-								"</div>"+
-								"<div class='zh-pic'>"+
-									"<img src='../../img/1.jpg' alt=''>"+
-								"</div>"+
-								"<div class='zh-picNo'>StringTheory_"+i+"</div>"+
-							"</div>";
-			};
-			$(".zh-picContainer").append(div);
+	</div>
+</body>
+<script>
+	$(function () {
+		// creatDiv();
+	})
+	function creatDiv() {
+		var div = '';
+		for (var i = 0; i < 30; i++) {
+			div += "<div class='zh-picItem'>" +
+				"<div class='zh-picCheck'>" +
+				"<input class='zh-checkbox' type='checkbox'>" +
+				"<span>增值税专用发票(收入)</span>" +
+				"</div>" +
+				"<div class='zh-pic'>" +
+				"<img src='../../img/1.jpg' alt=''>" +
+				"</div>" +
+				"<div class='zh-picNo'>StringTheory_" + i + "</div>" +
+				"</div>";
 		};
-		$('.zh-picItem').mousedown(function(e){
-			console.log($(this).offset())
-			var that = this;
-			var positionDiv = $(this).offset();
-			var distenceX = e.pageX - positionDiv.left;
-			var distenceY = e.pageY - positionDiv.top;
-			$('.richard-content-content').mousemove(function(e){
-				var x = e.pageX - positionDiv.left;
-				var y = e.pageY - positionDiv.top;
-				$(that).css({
-					"left":x,
-					"top":y
-				})
-			});
-			$('.richard-content-content').mouseup(function() {
-					$('.richard-content-content').off('mousemove');
-			});
+		$(".zh-picContainer").append(div);
+	};
+	$('.zh-picItem').mousedown(function (e) {
+		console.log($(this).offset())
+		var that = this;
+		var positionDiv = $(this).offset();
+		var distenceX = e.pageX - positionDiv.left;
+		var distenceY = e.pageY - positionDiv.top;
+		$('.richard-content-content').mousemove(function (e) {
+			var x = e.pageX - positionDiv.left;
+			var y = e.pageY - positionDiv.top;
+			$(that).css({
+				"left": x,
+				"top": y
+			})
 		});
-	</script>
+		$('.richard-content-content').mouseup(function () {
+			$('.richard-content-content').off('mousemove');
+		});
+	});
+</script>
+
 </html>
